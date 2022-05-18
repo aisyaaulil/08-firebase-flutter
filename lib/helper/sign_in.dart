@@ -37,7 +37,7 @@ Future<String?> signInWithGoogle() async {
     final User? currentUser = _auth.currentUser;
     assert(user.uid == currentUser!.uid);
     if (kDebugMode) {
-      print('signInWithGoogle succeeded: $user');
+      print('signInWithGoogle succeded: $user');
     }
     return '$user';
   }
@@ -47,32 +47,4 @@ Future<String?> signInWithGoogle() async {
 Future<void> signOutGoogle() async {
   await googleSignIn.signOut();
   print("User Signed Out");
-}
-
-class AuthSign {
-  static final FirebaseAuth _auth1 = FirebaseAuth.instance;
-
-  static Future<User?> signUp(String email, String password) async {
-    try {
-      Firebase.initializeApp();
-      UserCredential result = await _auth.createUserWithEmailAndPassword(
-          email: email, password: password);
-      User? firebaseUser = result.user;
-      User? currentUser = _auth.currentUser;
-      assert(firebaseUser!.uid == currentUser?.uid);
-      email = firebaseUser!.uid;
-      return firebaseUser;
-    } catch (e) {
-      print(e.toString() + "bala bala");
-      return null;
-    }
-  }
-
-  //static Future<User> signIn(String email, String password) async {
-  //  try {} catch (e) {}
-  //}
-
-  static Future<void> signOut() async {
-    _auth1.signOut();
-  }
 }

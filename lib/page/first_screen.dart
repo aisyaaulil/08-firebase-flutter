@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:ai_flutter_firebase/login_page.dart';
-import 'package:ai_flutter_firebase/sign_in.dart';
+import 'package:ai_flutter_firebase/page/login_page.dart';
+import 'package:ai_flutter_firebase/helper/sign_in.dart';
 
 class FirstScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("(2031710026) Aisyah Ulil Maulina")),
+      appBar: AppBar(title: const Text("(2031710026) Aisyah Ulil")),
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
@@ -34,15 +34,15 @@ class FirstScreen extends StatelessWidget {
               Text(
                 'NAME',
                 style: TextStyle(
-                    fontSize: 15,
+                    fontSize: 18,
                     fontWeight: FontWeight.bold,
                     color: Colors.black54),
               ),
               Text(
                 name!,
                 style: TextStyle(
-                    fontSize: 25,
-                    color: Colors.blue,
+                    fontSize: 20,
+                    color: Color.fromARGB(197, 0, 149, 198),
                     fontWeight: FontWeight.bold),
               ),
               SizedBox(height: 20),
@@ -57,10 +57,10 @@ class FirstScreen extends StatelessWidget {
                 email!,
                 style: TextStyle(
                     fontSize: 25,
-                    color: Colors.blue,
+                    color: Color.fromARGB(197, 0, 149, 198),
                     fontWeight: FontWeight.bold),
               ),
-              SizedBox(height: 40),
+              SizedBox(height: 50),
               RaisedButton(
                 onPressed: () {
                   signOutGoogle();
@@ -70,17 +70,17 @@ class FirstScreen extends StatelessWidget {
                     return LoginPage();
                   }), ModalRoute.withName('/'));
                 },
-                color: Colors.blue,
+                color: Color.fromARGB(197, 0, 149, 198),
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(9.0),
                   child: Text(
-                    'Sign Out',
-                    style: TextStyle(fontSize: 25, color: Colors.black),
+                    'SIGN OUT',
+                    style: TextStyle(fontSize: 15, color: Colors.white),
                   ),
                 ),
                 elevation: 5,
                 shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(40)),
+                    borderRadius: BorderRadius.circular(30)),
               )
             ],
           ),

@@ -6,12 +6,16 @@ class FirstScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(title: const Text("(2031710026) Aisyah Ulil Maulina")),
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topRight,
             end: Alignment.bottomLeft,
-            colors: [Colors.blue, Colors.blue],
+            colors: [
+              Color.fromARGB(255, 251, 251, 252),
+              Color.fromARGB(255, 250, 250, 250)
+            ],
           ),
         ),
         child: Center(
@@ -21,7 +25,7 @@ class FirstScreen extends StatelessWidget {
             children: <Widget>[
               CircleAvatar(
                 backgroundImage: NetworkImage(
-                  imageUrl,
+                  imageUrl!,
                 ),
                 radius: 60,
                 backgroundColor: Colors.transparent,
@@ -35,10 +39,10 @@ class FirstScreen extends StatelessWidget {
                     color: Colors.black54),
               ),
               Text(
-                name,
+                name!,
                 style: TextStyle(
                     fontSize: 25,
-                    color: Colors.deepPurple,
+                    color: Colors.blue,
                     fontWeight: FontWeight.bold),
               ),
               SizedBox(height: 20),
@@ -50,10 +54,10 @@ class FirstScreen extends StatelessWidget {
                     color: Colors.black54),
               ),
               Text(
-                email,
+                email!,
                 style: TextStyle(
                     fontSize: 25,
-                    color: Colors.deepPurple,
+                    color: Colors.blue,
                     fontWeight: FontWeight.bold),
               ),
               SizedBox(height: 40),
@@ -66,12 +70,12 @@ class FirstScreen extends StatelessWidget {
                     return LoginPage();
                   }), ModalRoute.withName('/'));
                 },
-                color: Colors.deepPurple,
+                color: Colors.blue,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Text(
                     'Sign Out',
-                    style: TextStyle(fontSize: 25, color: Colors.white),
+                    style: TextStyle(fontSize: 25, color: Colors.black),
                   ),
                 ),
                 elevation: 5,
